@@ -26,4 +26,5 @@
     * Copy the `predict.py` file on to the Instance
     * `spark-submit --packages org.apache.hadoop:hadoop-aws:3.2.2 predict.py s3://programassignment2/ValidationDataset.csv`.
 
+Docker Link : https://hub.docker.com/r/sap87/assignment2
 

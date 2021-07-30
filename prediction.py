@@ -15,7 +15,7 @@ if len(sys.argv) == 2:
     predict_input = sys.argv[1]
     
     tdf = sql_context.read.format('com.databricks.spark.csv').options(header='true', inferschema='true', sep=';').load(predict_input)
-    model = DecisionTreeModel.load(spark_context, 's3://programassignment2/assignment2-model')
+    model = DecisionTreeModel.load(spark_context, 'assignment2-model')
 
     test_data = tdf.rdd.map(lambda row: LabeledPoint(row[-1], Vectors.dense(row[:11])))
     predict = model.predict(test_data.map(lambda x: x.features))
